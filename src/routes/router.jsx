@@ -1,4 +1,5 @@
 import Mainlayout from "@/layout/MainLayout";
+import About from "@/pages/main/about";
 
 import Home from "@/pages/main/Home";
 
@@ -10,10 +11,10 @@ export const router = createBrowserRouter([
     element: <Mainlayout />,
     children: [
       { index: true, element: <Home /> },
-      //   {
-      //     path: "about",
-      //     element: <About />,
-      //   },
+      {
+        path: "about",
+        element: <About />,
+      },
     ],
   },
 ]);
