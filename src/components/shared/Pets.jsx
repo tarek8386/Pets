@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Pets = ({data}) => {
-
+const [isFav,setIsFav] = useState(false);
+  const handleFav =()=>{
+    setIsFav(!isFav);
+  }
   return (
    <>
           <div
@@ -12,19 +15,18 @@ const Pets = ({data}) => {
                 src={data.img}
                 className="w-full h-full object-cover"
               />
-              <button className="flex w-[40px] h-[40px] p-[11.429px] justify-center items-center gap-[7.143px] rounded-[20px] border-[0.714px] border-[solid] border-[#E8E8E8] bg-[#FFF] absolute right-[27.2px] top-[27.818px]">
+              <button onClick={handleFav} className="flex w-[40px] h-[40px] p-[11.429px] justify-center items-center gap-[7.143px] rounded-[20px] border-[0.714px] border-[solid] border-[#E8E8E8] bg-[#FFF] absolute right-[27.2px] top-[27.818px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="21"
                   viewBox="0 0 20 21"
-                  fill="none"
+                  className={`${isFav? 'stroke-white fill-[#F1842C]':'stroke-[#757575] fill-white'}`}
                 >
                   <path
                     d="M16.2201 4.14682C13.9854 2.77605 12.035 3.32845 10.8633 4.20837C10.3828 4.56916 10.1426 4.74955 10.0013 4.74955C9.85997 4.74955 9.6198 4.56916 9.1393 4.20837C7.96765 3.32845 6.01721 2.77605 3.7825 4.14682C0.849693 5.94581 0.186068 11.8808 6.95091 16.8879C8.2394 17.8415 8.88364 18.3184 10.0013 18.3184C11.119 18.3184 11.7632 17.8415 13.0517 16.8879C19.8166 11.8808 19.1529 5.94581 16.2201 4.14682Z"
-                    stroke="#757575"
-                    stroke-width="1.07143"
-                    stroke-linecap="round"
+                    strokeWidth="1.07143"
+                    strokeLinecap="round"
                   />
                 </svg>
               </button>
