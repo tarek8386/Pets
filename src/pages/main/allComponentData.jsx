@@ -193,10 +193,13 @@ const comments = [
               "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
             likes: 165,
             replies: [],
+            share:100,
           },
         ],
+        share: 165,
       },
     ],
+    share: 165,
   },
   {
     user: { name: "John Smith", avatar: avatar },
@@ -205,6 +208,7 @@ const comments = [
       "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
     likes: 165,
     replies: [],
+    share: 165,
   },
 ];
 
@@ -284,7 +288,7 @@ const allComponentData = () => {
 
       <div className="p-4 max-w-2xl mx-auto">
       {comments.map((comment, index) => (
-        <CommentCard key={index} comment={comment} />
+        <CommentCard key={index} comment={comment} isReply={false} />
       ))}
     </div>
 
