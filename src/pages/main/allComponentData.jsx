@@ -20,8 +20,12 @@ import market4 from "../../assets/images/marketItem-4.png";
 
 import blogImg from "../../assets/images/blogImg.jpg"
 
-import CommentCard from "@/components/shared/CommentCard";
+import CommentCard from "@/components/shared/ReviewCard";
 import BlogCard from "@/components/shared/BlogCard";
+import ActivityCard from "@/components/shared/ActivityCard";
+import ReviewCard from "@/components/shared/ReviewCard";
+
+// restaurant data
 
 const restaurantData = [
   {
@@ -61,6 +65,7 @@ const restaurantData = [
   },
 ];
 
+// pet data
 const petData = [
   {
     img: pet1,
@@ -94,6 +99,7 @@ const petData = [
   },
 ];
 
+// market data
 const marketData = [
   { img: market1, title: "Luna", price: "$80.99" },
   { img: market2, title: "Bella", price: "$75.50" },
@@ -103,8 +109,7 @@ const marketData = [
 ];
 
 // comments data
-
-const commentsData = [
+const reviewData = [
     {
       avatar: 'https://i.pravatar.cc/40?img=3',
       name: 'Scott William',
@@ -129,7 +134,6 @@ const commentsData = [
   ];
 
 //   blog card data
-  
 const blogData = [
     {
       thumbnail: blogImg,
@@ -143,6 +147,26 @@ const blogData = [
     },
     // Add more blog entries as needed...
   ];
+
+
+// recent Activity data
+
+const activityData = [
+  {
+    date: "Mar 30, 2025",
+    time: "11:32 pm",
+    title: "Started a new discussion regarding What are some indoor places I can take my 2-year old Golden Retriever to? on the PawTalk Forum",
+    point: "+10",
+  },
+  {
+    date: "Mar 30, 2025",
+    time: "11:32 pm",
+    title: "Started a new discussion regarding What are some indoor places I can take my 2-year old Golden Retriever to? on the PawTalk Forum",
+    point: "+10",
+  },
+]
+  
+
 
 const allComponentData = () => {
   return (
@@ -181,12 +205,12 @@ const allComponentData = () => {
       </div>
 
       <h1 className="text-[#2F2F2F] font-noto text-[28px] not-italic font-semibold leading-[36.4px] my-8 border-b-[1px] border-[red] border-dashed w-fit mx-auto">
-        Comment Card Component ⤵️
+        Review Card Component ⤵️
       </h1>
 
       <div className="commentsWrapper">
-      {commentsData.map((comment, index) => (
-        <CommentCard key={index} comment={comment} />
+      {reviewData.map((comment, index) => (
+        <ReviewCard key={index} comment={comment} />
       ))}
     </div>
 
@@ -194,11 +218,22 @@ const allComponentData = () => {
         Blog Card Component ⤵️
       </h1>
 
-      <div className="container py-8 space-y-4">
+      <div className="py-8 space-y-4">
       {blogData.map((item, idx) => (
         <BlogCard key={idx} data={item} />
       ))}
     </div>
+
+    <h1 className="text-[#2F2F2F] font-noto text-[28px] not-italic font-semibold leading-[36.4px] my-8 border-b-[1px] border-[red] border-dashed w-fit mx-auto">
+        Recent Activity Component ⤵️
+      </h1>
+
+      <div className="flex flex-col gap-3">
+        {activityData.map((item,index)=>(
+          <ActivityCard key={index} data={item}/>)
+          )}
+      </div>
+
     </div>
   );
 };

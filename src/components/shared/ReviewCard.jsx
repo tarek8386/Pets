@@ -1,8 +1,8 @@
 import React from "react";
 
-const CommentCard = ({ comment }) => {
+const ReviewCard = ({ comment }) => {
   return (
-    <div className="commentCard pt-8 border-b border-[#E8E8E8] ">
+    <div className="reviewCard pt-8 border-b border-[#E8E8E8] ">
       <div className="flex justify-between items-start">
         <div className="flex gap-4 items-center">
           <img
@@ -157,4 +157,4 @@ const CommentCard = ({ comment }) => {
   );
 };
 
-export default CommentCard;
+export default ReviewCard;

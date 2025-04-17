@@ -21,6 +21,7 @@ export default {
         lexend: ['Lexend', 'sans-serif'], 
         noto: ['Noto Sans', 'sans-serif'], 
         nunito: ['Nunito Sans', 'sans-serif'], 
+        manrope: ['Manrope', 'sans-serif'], 
       },
       borderRadius: {
         lg: "var(--radius)",

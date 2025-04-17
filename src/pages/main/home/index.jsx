@@ -5,7 +5,6 @@ import AllComponentData from './../allComponentData';
 const Home = () => {
   return (
     <div>
-      <Hero />
      <AllComponentData/>
     </div>
   );
