@@ -1,7 +1,12 @@
 import React from "react";
+
 import MarketItem from "@/components/shared/MarketItem";
 import Pets from "@/components/shared/Pets";
 import RestaurantItem from "@/components/shared/Restaurants";
+import BlogCard from "@/components/shared/BlogCard";
+import ActivityCard from "@/components/shared/ActivityCard";
+import ReviewCard from "@/components/shared/ReviewCard";
+import CommentCard from '@/components/shared/CommentCard';
 
 import restaurantsImg1 from "../../assets/images/restaurant.jpg";
 import restaurantsImg2 from "../../assets/images/restaurant-1.jpg";
@@ -20,10 +25,8 @@ import market4 from "../../assets/images/marketItem-4.png";
 
 import blogImg from "../../assets/images/blogImg.jpg"
 
-import CommentCard from "@/components/shared/ReviewCard";
-import BlogCard from "@/components/shared/BlogCard";
-import ActivityCard from "@/components/shared/ActivityCard";
-import ReviewCard from "@/components/shared/ReviewCard";
+import avatar from "../../assets/images/avatar.jpg"
+
 
 // restaurant data
 
@@ -164,7 +167,47 @@ const activityData = [
     title: "Started a new discussion regarding What are some indoor places I can take my 2-year old Golden Retriever to? on the PawTalk Forum",
     point: "+10",
   },
-]
+];
+
+// comment data
+
+const comments = [
+  {
+    user: { name: "John Smith", avatar: avatar },
+    time: "51 mins ago",
+    text:
+      "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
+    likes: 165,
+    replies: [
+      {
+        user: { name: "John Smith", avatar: avatar },
+        time: "5 hours ago",
+        text:
+          "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
+        likes: 165,
+        replies: [
+          {
+            user: { name: "John Smith", avatar: avatar },
+            time: "6 hours ago",
+            text:
+              "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
+            likes: 165,
+            replies: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    user: { name: "John Smith", avatar: avatar },
+    time: "5 hours ago",
+    text:
+      "Getting a new pet can be both exciting and overwhelming. Here are some essential tips to help you prepare for your new family member...",
+    likes: 165,
+    replies: [],
+  },
+];
+
   
 
 
@@ -233,6 +276,17 @@ const allComponentData = () => {
           <ActivityCard key={index} data={item}/>)
           )}
       </div>
+
+
+    <h1 className="text-[#2F2F2F] font-noto text-[28px] not-italic font-semibold leading-[36.4px] my-8 border-b-[1px] border-[red] border-dashed w-fit mx-auto">
+        Comment Card Component ⤵️
+      </h1>
+
+      <div className="p-4 max-w-2xl mx-auto">
+      {comments.map((comment, index) => (
+        <CommentCard key={index} comment={comment} />
+      ))}
+    </div>
 
     </div>
   );
