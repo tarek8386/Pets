@@ -6,6 +6,8 @@ const Home = () => {
   return (
     <div>
      <AllComponentData/>
+     
+     <h1>test</h1>
     </div>
   );
 };
